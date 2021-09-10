@@ -7,4 +7,7 @@ public class Hero {
     private  String weakness;
 
 
+    public Hero(){
+
+    }
 }
