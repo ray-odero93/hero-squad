@@ -20,6 +20,12 @@ public class SquadTest {
         assertEquals("Avengers", squad.getName());
     }
 
+    @Test
+    public void newSquad_instantiatesWithValidMission() {
+        Squad squad = new Squad("Avengers", "Save the Universe", 14);
+        assertEquals("Save the universe", squad.getMission());
+    }
+
 
     @Before
     public void setUp() throws Exception {
