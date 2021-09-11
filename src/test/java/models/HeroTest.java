@@ -10,7 +10,8 @@ public class HeroTest {
 
     @Test
     public void newHero_instantiatesCorrectly() {
-
+        Hero hero = new Hero();
+        assertEquals(true, hero instanceof Hero);
     }
 
     @Before
