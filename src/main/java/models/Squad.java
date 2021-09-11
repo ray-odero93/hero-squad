@@ -14,4 +14,13 @@ public class Squad {
     public String getName() {
         return name;
     }
+
+
+    public String getMission() {
+        return mission;
+    }
+
+    public int getLimit() {
+        return participants;
+    }
 }
