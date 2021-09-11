@@ -32,6 +32,12 @@ public class HeroTest {
         assertEquals("intellectual-animist", hero.getPower());
     }
 
+    @Test
+    public void newHero_instantiatesWithCorrectWeakness() throws Exception{
+        Hero hero = new Hero("ray", 28, "intellectual-animist","cake");
+        assertEquals("cake", hero.getWeakness());
+    }
+
     @Before
     public void setUp() throws Exception {
     }
