@@ -9,9 +9,15 @@ import static org.junit.Assert.*;
 public class HeroTest {
 
     @Test
-    public void newHero_instantiatesCorrectly() {
-        Hero hero = new Hero();
-        assertEquals(true, hero instanceof Hero);
+    public void newHero_instantiatesCorrectly() throws Exception {
+        Hero hero = new Hero("ray", 28, "intellectual-animist","truth");
+        assertTrue(hero instanceof Hero);
+    }
+
+    @Test
+    public void newHero_instantiatesWithCorrectContent_true() throws Exception{
+        Hero hero = new Hero("ray", 28, "intellectual-animist","truth");
+        assertEquals("", hero.getContent());
     }
 
     @Before
