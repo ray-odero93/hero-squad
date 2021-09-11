@@ -14,6 +14,12 @@ public class SquadTest {
         assertTrue(squad instanceof Squad);
     }
 
+    @Test
+    public void newSquad_instantiatesWithValidName() {
+        Squad squad = new Squad("Avengers", "Save the Universe", 14);
+        assertEquals("Avengers", squad.getName());
+    }
+
 
     @Before
     public void setUp() throws Exception {
