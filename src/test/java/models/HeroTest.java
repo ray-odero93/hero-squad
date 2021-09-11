@@ -26,6 +26,12 @@ public class HeroTest {
         assertEquals(28, hero.getAge());
     }
 
+    @Test
+    public void newHero_instantiatesWithCorrectPower() throws Exception{
+        Hero hero = new Hero("ray", 28, "intellectual-animist","truth");
+        assertEquals("intellectual-animist", hero.getPower());
+    }
+
     @Before
     public void setUp() throws Exception {
     }
