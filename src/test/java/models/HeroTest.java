@@ -15,9 +15,15 @@ public class HeroTest {
     }
 
     @Test
-    public void newHero_instantiatesWithCorrectContent_true() throws Exception{
+    public void newHero_instantiatesWithCorrectName_true() throws Exception{
         Hero hero = new Hero("ray", 28, "intellectual-animist","truth");
-        assertEquals("", hero.getContent());
+        assertEquals("", hero.getName());
+    }
+
+    @Test
+    public void newHero_instantiatesWithCorrectAge_true() throws Exception{
+        Hero hero = new Hero("ray", 28, "intellectual-animist","truth");
+        assertEquals(28, hero.getAge());
     }
 
     @Before
