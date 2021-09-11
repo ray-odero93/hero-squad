@@ -23,7 +23,13 @@ public class SquadTest {
     @Test
     public void newSquad_instantiatesWithValidMission() {
         Squad squad = new Squad("Avengers", "Save the Universe", 14);
-        assertEquals("Save the universe", squad.getMission());
+        assertEquals("Save the Universe", squad.getMission());
+    }
+
+    @Test
+    public void newSquad_instantiatesWithValidParticipantsLimit() {
+        Squad squad = new Squad("Avengers", "Save the Universe", 14);
+        assertEquals(14, squad.getLimit());
     }
 
 
