@@ -45,5 +45,7 @@ public class Hero {
         instances.clear();
     }
 
-
+    public int getId() {
+        return id;
+    }
 }
