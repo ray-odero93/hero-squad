@@ -48,4 +48,8 @@ public class Hero {
     public int getId() {
         return id;
     }
+
+    public static Hero findById(int id) {
+        return instances.get(id-1);
+    }
 }
