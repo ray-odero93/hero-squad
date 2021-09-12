@@ -2,10 +2,12 @@
     <section>
         <div></div>
         <div></div>
-        <div>
-            <h3></h3>
-            <a></a>
-            <a></a>
+        <div class="done">
+            <h3>Done!<br><span>{{item}}</span><br>Has successfully been created.<br>{{squadId}}</h3>
+            <a class="btn btn-primary" href="/hero">View Heroes</a>
+            <a class="btn btn-primary" href="/squad">View Squads</a>
         </div>
     </section>
 {{/partial}}
+
+{{>layout.hbs}}
