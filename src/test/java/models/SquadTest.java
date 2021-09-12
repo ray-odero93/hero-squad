@@ -32,6 +32,14 @@ public class SquadTest {
         assertEquals(14, squad.getLimit());
     }
 
+    @Test
+    public void squadArray_instantiatesWithSquads_true() {
+        Squad squad = new Squad("Avengers", "Save the Universe", 14);
+        Squad otherSquad = new Squad("Justice League", "Kill DoomsDay", 8);
+
+        assertTrue(squad.getInstances().contains(squad));
+        assertTrue(Squad.getInstances().contains(otherSquad));
+    }
 
     @Before
     public void setUp() throws Exception {
