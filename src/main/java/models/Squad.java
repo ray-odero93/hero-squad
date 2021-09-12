@@ -5,6 +5,7 @@ public class Squad {
     private String mission;
     private int participants;
 
+
     public Squad( String name, String mission, int participants){
         this.name = name;
         this.mission = mission;
