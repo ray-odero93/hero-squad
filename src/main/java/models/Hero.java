@@ -52,4 +52,5 @@ public class Hero {
     public static Hero findById(int id) {
         return instances.get(id-1);
     }
+
 }
