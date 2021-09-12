@@ -56,6 +56,14 @@ public class HeroTest {
         assertEquals(3, thirdHero.getId());
     }
 
+    @Test
+    public void heroArray_findById_Id() {
+        Hero.clearInstances();
+        Hero hero = new Hero("ray", 28, "intellectual-animist","cake");
+        Hero otherHero = new Hero("purity", 25, "total killer-babe","diamonds");
+        assertEquals(2, Hero.findById(otherHero.getId()).getId());
+    }
+
     @Before
     public void setUp() throws Exception {
     }
