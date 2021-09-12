@@ -46,6 +46,16 @@ public class HeroTest {
         assertTrue(Hero.getInstances().contains(otherHero));
     }
 
+    @Test
+    public void heroArray_getById_integer() {
+        Hero.clearInstances();
+        Hero hero = new Hero("ray", 28, "intellectual-animist","cake");
+        Hero anotherHero = new Hero("purity", 25, "total killer-babe","diamonds");
+        Hero thirdHero = new Hero("avie", 21, "terminator gaijin","bulonium 204");
+
+        assertEquals(3, thirdHero.getId());
+    }
+
     @Before
     public void setUp() throws Exception {
     }
