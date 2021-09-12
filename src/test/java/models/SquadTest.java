@@ -41,6 +41,16 @@ public class SquadTest {
         assertTrue(Squad.getInstances().contains(otherSquad));
     }
 
+    @Test
+    public void squadArray_squadMembersValidlyAdded() {
+        Squad squad = new Squad("Avengers", "Saving the Universe", 14);
+        Hero hero = new Hero("ray", 28, "intellectual-anims", "cake");
+        Hero otherHero = new Hero("purity", 25, "total killer-babe", "diamonds");
+
+        squad.addSquadMembers(hero);
+        assertEquals("ray", squad.getSquadMembers().get(0).getName());
+    }
+
     @Before
     public void setUp() throws Exception {
     }
