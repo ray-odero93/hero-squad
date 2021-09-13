@@ -5,6 +5,7 @@
   box-sizing: border-box;
   transition: all 0.2s ease-out;
   font-family: 'Abel', sans-serif;
+  background: ;
 }
 a{
   text-decoration: none;
@@ -13,6 +14,7 @@ a{
 }
 .btn{
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   outline: none;
   padding: 5px 20px;
@@ -65,6 +67,7 @@ nav{
   right: 10%;
   font-family: 'Abel', sans-serif;
   background: #81B1D4;
+  border-radius: 5px;
 }
 nav>ul li{
   display: inline-block;
@@ -145,6 +148,7 @@ nav>ul li{
 .hero-btn{
   background: rgb(11, 68, 35);
   color: white;
+  border-radius: 5px;
   padding: 5px;
   width: 60%;
   position: absolute;
@@ -310,7 +314,7 @@ nav>ul li{
   text-align: center;
   animation: successColor 1s linear 1;
 }
-.success h3 span{
+.done h3 span{
   color: rgb(123, 255, 0);
 }
 @keyframes successColor{
@@ -323,8 +327,8 @@ nav>ul li{
     color: rgb(22, 54, 0);
   }
 }
-.success::after,
-.success::before{
+.done::after,
+.done::before{
   content: "";
   position: absolute;
   top: -5px;
@@ -333,7 +337,7 @@ nav>ul li{
   height: 100%;
   animation: success 0.7s linear 1;
 }
-.success::before{
+.done::before{
   right: 100%;
   animation: success1 0.7s linear 1;
 }
