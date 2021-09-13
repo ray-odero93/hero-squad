@@ -66,13 +66,34 @@ public class App {
             String squadName = req.queryParams("name");
             Integer size = Integer.parseInt(req.queryParams("participants"));
             String cause = req.queryParams("mission");
-            Squad newSquad = new Squad(squadName, cause);
+            Squad squad = new Squad(squadName, cause);
             req.session().attribute("item",squadName);
             model.put("item",req.session().attribute("item"));
             return new ModelAndView(model,"success.hbs");
         },
                 new HandlebarsTemplateEngine());
 
+        post("/new/hero",(req, res) ->{
+            Map<String, Object> model = new HashMap<>();
+            String name = req.queryParams("name");
+            int age = Integer.parseInt(req.queryParams("age"));
+            String power = req.queryParams("power");
+            String weakness = req.queryParams("weakness");
+            Hero newHero = new Hero(name,age,power,weakness);
+            req.session().attribute("item",name);
+            model.put("item",req.session().attribute("item"));
+            model.put("newHero",newHero);
+            return new ModelAndView(model, "success.hbs");
+        },
+                new HandlebarsTemplateEngine());
 
+        get("/new/member/:id", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            request.session().attribute("selectedSquad",request.params("id"));
+            model.put("selectedSquad", request.session().attribute("selectedSquad"));
+            model.put("item",1);
+            return new ModelAndView(model, "success.hbs");
+        },
+                new HandlebarsTemplateEngine());
     }
 }
