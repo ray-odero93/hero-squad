@@ -13,6 +13,7 @@ public class Squad {
     private static ArrayList<Squad> instances = new ArrayList<>();
     private ArrayList<Hero> members = new ArrayList<>();
 
+
     public Squad( String name, String mission, int participants){
         this.name = name;
         this.mission = mission;
