@@ -95,5 +95,17 @@ public class App {
             return new ModelAndView(model, "success.hbs");
         },
                 new HandlebarsTemplateEngine());
+
+        get("/squad/new/:id",(req,res)->{
+            Map<String, Object> model = new HashMap<>();
+            int id= Integer.parseInt(req.params(":id"));
+            Hero newMember = Hero.findById(id);
+            Squad newSquad = Squad.findById(1);
+            newSquad.addSquadMembers(newMember);
+            model.put("item", newMember.getName());
+            model.put("newHero",newSquad.getName());
+            return new ModelAndView(model, "success.hbs");
+        },
+                new HandlebarsTemplateEngine());
     }
 }
