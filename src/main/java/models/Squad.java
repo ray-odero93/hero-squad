@@ -1,12 +1,10 @@
 package models;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Dictionary;
-import java.util.Queue;
-import java.util.concurrent.LinkedBlockingQueue;
 
 public class Squad {
+    private static int squadId;
+    private int id;
     private String name;
     private String mission;
     private int participants;
@@ -18,6 +16,14 @@ public class Squad {
         this.name = name;
         this.mission = mission;
         this.participants = participants;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public static Squad findSquadById() {
+        return instances.get(squadId-1);
     }
 
     public String getName() {

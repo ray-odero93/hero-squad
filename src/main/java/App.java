@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import static models.Squad.*;
 import static spark.Spark.*;
 
 public class App {
@@ -51,11 +52,11 @@ public class App {
 
         get("/squad",(req, res) ->{
             Map<String, Object> model = new HashMap<>();
-            ArrayList<Squad> squads = Squad.getInstances();
+            ArrayList<Squad> squads = getInstances();
             model.put("squads",squads);
             ArrayList<Hero> members = Hero.getInstances();
             model.put("heroes",members);
-            Squad newSquad = Squad.findById(1);
+            Squad newSquad = Squad.findSquadById();
             model.put("allSquadMembers", newSquad.getSquadMembers());
             return new ModelAndView(model, "squad.hbs");
         },
@@ -64,9 +65,9 @@ public class App {
         post("/squad/new",(req,res)-> {
             Map<String, Object> model = new HashMap<>();
             String squadName = req.queryParams("name");
-            Integer size = Integer.parseInt(req.queryParams("participants"));
+            int size = Integer.parseInt(req.queryParams("participants"));
             String cause = req.queryParams("mission");
-            Squad squad = new Squad(squadName, cause);
+            Squad squad = new Squad(squadName, cause, size);
             req.session().attribute("item",squadName);
             model.put("item",req.session().attribute("item"));
             return new ModelAndView(model,"success.hbs");
@@ -100,7 +101,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             int id= Integer.parseInt(req.params(":id"));
             Hero newMember = Hero.findById(id);
-            Squad newSquad = Squad.findById(1);
+            Squad newSquad = Squad.findSquadById();
             newSquad.addSquadMembers(newMember);
             model.put("item", newMember.getName());
             model.put("newHero",newSquad.getName());

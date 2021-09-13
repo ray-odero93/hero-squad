@@ -50,8 +50,6 @@ header{
 
 }
 .nav-hr{
-  border: 0.3px solid rgb(48, 116, 52);
-  box-shadow: 0 0 5px rgb(115, 124, 110);
   position: absolute;
   width: 100%;
   top: 45px;
@@ -66,7 +64,7 @@ nav{
   top: 23px;
   right: 10%;
   font-family: 'Abel', sans-serif;
-  background: rgb(8, 22, 8);
+  background: #81B1D4;
 }
 nav>ul li{
   display: inline-block;
@@ -81,9 +79,8 @@ nav>ul li{
   justify-content: center;
   margin-top: 15vh;
   min-height: 10vh;
-  background: rgb(8, 22, 8);
+  background: #81B1D4;
   color: white;
-  box-shadow: 0 0 10px rgba(255,255,255,0.4);
 }
 .landingPage h2{
   z-index: 10;
@@ -102,12 +99,12 @@ nav>ul li{
   top: 0vh;
   width: 50%;
   height: 100vh;
-  background: rgb(8, 22, 8);
+  background: #435C6E;
   z-index: 2;
 }
 .leftLanding{
   left: 0px;
-  background: rgb(0, 0, 0);
+  background: #2C3C47;
 }
 .heroImage{
   position: relative;
@@ -117,7 +114,7 @@ nav>ul li{
   margin-top: 5vh;
   height: 70vh;
   overflow: hidden;
-  background: url('/img/arrow_1.jpg');
+  background: url('/images/hero.jpg');
   background-position: top center;
   box-shadow: 0 0 20px rgb(24, 44, 13);
   animation: load1 0.8s linear 1;
@@ -132,7 +129,7 @@ nav>ul li{
   left: 0px;
   color: white;
   padding-top: 20px;
-  background: rgba(0, 0, 0, 0.527);
+  background: #113662;
   text-align: center;
   animation: load 1s linear 1;
 }
