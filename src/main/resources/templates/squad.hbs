@@ -1,0 +1,61 @@
+{{#partial "content"}}
+    <section class="landingPage">
+        <div class="leftLanding"></div>
+        <div class="rightLanding"></div>
+
+<!--        main squad content start here-->
+        <div class="squad">
+            <div id="newMember">
+                <p class="close">&cross;</p>
+                <h2>Choose Squad Members</h2>
+                {{#each heroes}}
+                    <div class="items">
+                        <img src="" alt="">
+                        <div class="details">
+                            <p>Name: {{name}}</p>
+                            <p>Special Power: {{power}}</p>
+                            <P>Weakness: {{weakness}}</P>
+                            <a href="/squad/new/{{id}}" class="btn">Add to squad</a>
+                        </div>
+                    </div>
+                {{/each}}
+                </div>
+                <h2>
+                    <a href="/squad-form" class="btn">Create a Squad</a>
+                    <br><br>
+                    {{#if sqauds}}
+                            Available Squads
+                        </h2>
+                        {{#each squads}}
+                            <div class="squadDescriptions">
+                                <img src="" alt="">
+                                <div>
+                                    <h1>{{name}}</h1>
+                                    <p>ID: {{id}}</p>
+                                    <p>Cause: {{mission}}</p>
+                                    <p>Max Limit: {{members}}</p>
+                                    <br><br>
+                                    <h3>Members:</h3>
+                                    <a class="btn" href="/new/member/{{id}}">#</a>
+                                    <button class="addMember add">Add a Member</button>
+                                    {{#each members}}
+                                        <div class="memberDescriptions">
+                                            <h5>Name: {{this.name}}</h5>
+                                            <h5>Special Power: {{power}}</h5>
+                                            <button class="btn">Delete</button>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        {{/each}}
+                        {{else}}
+                        <h2>Please create a squad to continue.</h2>
+                        {{/if}}
+            </div>
+    </section>
+{{/partial}}
+{{#partial "footer"}}
+
+{{/partial}}
+
+{{>layout.hbs}}
