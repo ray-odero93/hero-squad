@@ -7,8 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static spark.Spark.get;
-import static spark.Spark.staticFileLocation;
+import static spark.Spark.*;
 
 public class App {
 
@@ -61,5 +60,19 @@ public class App {
             return new ModelAndView(model, "squad.hbs");
         },
                 new HandlebarsTemplateEngine());
+
+        post("/squad/new",(req,res)-> {
+            Map<String, Object> model = new HashMap<>();
+            String squadName = req.queryParams("name");
+            Integer size = Integer.parseInt(req.queryParams("participants"));
+            String cause = req.queryParams("mission");
+            Squad newSquad = new Squad(squadName, cause);
+            req.session().attribute("item",squadName);
+            model.put("item",req.session().attribute("item"));
+            return new ModelAndView(model,"success.hbs");
+        },
+                new HandlebarsTemplateEngine());
+
+
     }
 }
