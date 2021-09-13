@@ -1,5 +1,5 @@
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import models.Hero;
+import models.Squad;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -44,6 +44,22 @@ public class App {
             return new ModelAndView(model, "scores.hbs");
         });
 
+        get("/squad", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "squad-form.hbs");
+        },
+                new HandlebarsTemplateEngine());
 
+        get("/squad",(req, res) ->{
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Squad> squads = Squad.getInstances();
+            model.put("squads",squads);
+            ArrayList<Hero> members = Hero.getInstances();
+            model.put("heroes",members);
+            Squad newSquad = Squad.findById(1);
+            model.put("allSquadMembers", newSquad.getSquadMembers());
+            return new ModelAndView(model, "squad.hbs");
+        },
+                new HandlebarsTemplateEngine());
     }
 }
