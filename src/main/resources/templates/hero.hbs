@@ -1,0 +1,26 @@
+{{#partial "content"}}
+    <section class="landingPage">
+        <div class="leftLanding"></div>
+        <div class="rightLanding"></div>
+        <h2><a class="btn" href="/hero-form">Create Your Hero!</a><br><br>Current Heroes:</h2>
+
+        <!--main hero details start here-->
+        <div class="heroes">
+            {{#each hero}}
+                <div class="items">
+                    <img src="" alt="">
+                    <p>Name: {{name}}</p>
+                    <p>Age: {{age}}</p>
+                    <p>Powers: {{power}}</p>
+                    <p>Weakness: {{weakness}}</p>
+                    <p>ID: {{id}}</p>
+                    <a href="new/{{id}}" class="btn">Read More</a>
+                    <a href="/squad" class="btn">Add {{name}} to A Squad</a>
+                </div>
+            {{/each}}
+        </div>
+        <!--main hero details end here-->
+    </section>
+{{/partial}}
+
+{{>layout.hbs}}
